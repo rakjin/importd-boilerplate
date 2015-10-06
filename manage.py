@@ -13,6 +13,12 @@ d(
 
         'sella',
     ],
+    TEMPLATES=[
+        {
+            'BACKEND': 'django.template.backends.jinja2.Jinja2',
+            'APP_DIRS': True,
+        },
+    ],
     # django-nose
     TEST_RUNNER='django_nose.NoseTestSuiteRunner',
 )
