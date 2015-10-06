@@ -1,2 +1,2 @@
 importd==0.4.1
-django-nose==1.3.7
+django-nose==1.4.1
