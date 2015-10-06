@@ -17,13 +17,13 @@
 ## Install
 ```bash
 pip install -r requirements.txt
-python sella/app.py syncdb
-python sella/app.py runserver_plus
+python manage.py syncdb
+python manage.py runserver_plus
 ```
 
 ## Unit Test
 ```bash
-python sella/app.py test --exe sella demo api
+python manage.py test --exe sella demo api
 ```
 
 ## Sample URL
