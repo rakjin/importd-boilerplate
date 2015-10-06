@@ -9,5 +9,5 @@ python manage.py runserver_plus
 
 ## Unit Test
 ```bash
-python manage.py test sella
+python manage.py test
 ```
