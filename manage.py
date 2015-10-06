@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 from importd import d
 from jinja2 import Environment
+from django.core.urlresolvers import reverse
+
+from sella import filters
 
 
 d(
@@ -15,6 +18,7 @@ d(
         'debug_toolbar',
 
         'sella',
+        'demo',
     ],
     TEMPLATES=[
         {
@@ -40,6 +44,8 @@ d(
     ],
     # django-nose
     TEST_RUNNER='django_nose.NoseTestSuiteRunner',
+
+    mounts={'demo': '/demo/'},
 )
 
 from django.contrib.staticfiles.storage import staticfiles_storage
@@ -49,6 +55,10 @@ def jinja2_environment(**options):
     env = Environment(**options)
     env.globals.update({
         'static': staticfiles_storage.url,
+        'url': reverse,
+    })
+    env.filters.update({
+        'tojson': filters.tojson,
     })
     return env
 
